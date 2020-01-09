@@ -10,6 +10,11 @@ namespace membership_api.Models
         }
     public partial class Users
     {
+
+        public Users()
+        {
+            UserRewards = new HashSet<UserRewards>();
+        }
         public int UsersId { get; set;}
         public int UsersCardNumber { get; set; }
         public String UsersCardBarcode { get; set; }
@@ -42,6 +47,6 @@ namespace membership_api.Models
         public Boolean UsersIsBanned { get; set; }
 
         public virtual UserPoints UserPoints { get; set; }
-        public virtual UserRewards UserRewards { get; set; }
+        public virtual ICollection<UserRewards> UserRewards { get; set; }
     }
 }
