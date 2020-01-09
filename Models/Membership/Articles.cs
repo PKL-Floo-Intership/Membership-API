@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-
 namespace membership_api.Models
 {
     public partial class Articles
@@ -19,6 +16,6 @@ namespace membership_api.Models
          public DateTime? ArticlesDeletedAt { get; set; }
          public String ArticlesDeletedByUsersId { get; set; }
          public String ArticlesDeletedByUsersName { get; set; }
-         
+
     }
 }
