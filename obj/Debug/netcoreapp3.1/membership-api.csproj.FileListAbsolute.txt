@@ -1,0 +1,9 @@
+D:\Kuliah\Prakerin\membership-api\membership-api\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Kuliah\Prakerin\membership-api\membership-api\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Kuliah\Prakerin\membership-api\membership-api\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Kuliah\Prakerin\membership-api\membership-api\obj\Debug\netcoreapp3.1\membership-api.csprojAssemblyReference.cache
+D:\Kuliah\Prakerin\membership-api\membership-api\obj\Debug\netcoreapp3.1\staticwebassets\membership-api.StaticWebAssets.Manifest.cache
+D:\Kuliah\Prakerin\membership-api\membership-api\obj\Debug\netcoreapp3.1\staticwebassets\membership-api.StaticWebAssets.xml
+D:\Kuliah\Prakerin\membership-api\membership-api\obj\Debug\netcoreapp3.1\membership-api.AssemblyInfoInputs.cache
+D:\Kuliah\Prakerin\membership-api\membership-api\obj\Debug\netcoreapp3.1\membership-api.AssemblyInfo.cs
+D:\Kuliah\Prakerin\membership-api\membership-api\obj\Debug\netcoreapp3.1\membership-api.RazorTargetAssemblyInfo.cache
