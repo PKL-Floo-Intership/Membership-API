@@ -40,5 +40,8 @@ namespace membership_api.Models
         public String UsersDeletedByUsersId { get; set; }
         public String UsersDeletedByUsersName { get; set; }
         public Boolean UsersIsBanned { get; set; }
+
+        public virtual UserPoints UserPoints { get; set; }
+        public virtual UserRewards UserRewards { get; set; }
     }
 }
