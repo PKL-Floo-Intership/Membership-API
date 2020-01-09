@@ -1,6 +1,6 @@
 using System;
 
-namespace membership_api
+namespace membership_api.Models
 {
     public partial class Rewards
     {

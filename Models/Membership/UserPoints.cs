@@ -1,6 +1,6 @@
 using System;
 
-namespace membership_api
+namespace membership_api.Models
 {
     public partial class UserPoints
     {
@@ -18,5 +18,7 @@ namespace membership_api
         public DateTime? UserPointsDeletedAt { get; set; }
         public String UserPointsDeletedByUsersId { get; set; }
         public String UserPointsDeletedByUsersName { get; set; }
+        public virtual Users Users { get; set; }
+
     }
 }
