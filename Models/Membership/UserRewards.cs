@@ -16,5 +16,8 @@ namespace membership_api.Models
         public DateTime? UserRewardsDeletedAt { get; set; }
         public String UserRewardsDeletedByUsersId { get; set; }
         public String UserRewardsDeletedByUsersName { get; set; }
+
+        public virtual Users Users { get; set; }
+        public virtual Rewards Rewards { get; set; }
     }
 }
