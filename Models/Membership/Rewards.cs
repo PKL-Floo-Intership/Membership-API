@@ -1,9 +1,14 @@
 using System;
+using System.Collections.Generic;
 
 namespace membership_api.Models
 {
     public partial class Rewards
     {
+        public Rewards()
+        {
+            UserRewards = new HashSet<UserRewards>();
+        }
         public int RewardsId { get; set; }
         public String RewardsName { get; set; }
         public String RewardsDescription { get; set; }
@@ -18,5 +23,7 @@ namespace membership_api.Models
         public String RewardsDeletedByUsersId { get; set; }
         public String RewardsDeletedByUsersName { get; set; }
         public Boolean RewardsIsActive { get; set; }
+
+        public virtual ICollection<UserRewards> UserRewards { get; set; }
     }
 }
