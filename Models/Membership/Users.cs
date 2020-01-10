@@ -17,7 +17,7 @@ namespace membership_api.Models
         }
         public int UsersId { get; set;}
         public int UsersCardNumber { get; set; }
-        public String UsersCardBarcode { get; set; }
+        public String UsersCardBarcodePicture { get; set; }
         public DateTime UsersCardExpiredAt { get; set; }
         public bool UsersCardIsExpired { get; set; }
         public String UsersIdentityNumber { get; set; }

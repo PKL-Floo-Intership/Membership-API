@@ -303,6 +303,115 @@ namespace membership_api.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
             });
+
+            modelBuilder.Entity<Users>(entity => {
+                entity.ToTable("USERS");
+
+                entity.Property(e => e.UsersId)
+                    .IsRequired()
+                    .HasColumnName("USERS_ID")
+                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.UsersCardNumber)
+                    .IsRequired()
+                    .HasColumnName("USERS_CARDS_NUMBER");
+                entity.Property(e => e.UsersCardBarcodePicture)
+                    .HasColumnName("USERS_CARD_BARCODE_PICTURE")
+                    .IsUnicode(false)
+                    .HasMaxLength(100);
+                entity.Property(e => e.UsersCardExpiredAt)
+                    .HasColumnName("USERS_CARD_EXPIRED")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.UsersCardIsExpired)
+                    .IsRequired()
+                    .HasColumnName("USERS_CARD_IS_EXPIRED")
+                    .HasColumnType("bit")
+                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.UsersIdentityNumber)
+                    .HasColumnName("USERS_IDENTITY_NUMBER")
+                    .IsUnicode(false)
+                    .HasMaxLength(50);
+                entity.Property(e => e.UsersFirstname)
+                    .IsRequired()
+                    .HasColumnName("USERS_FIRSTNAME")
+                    .IsUnicode(false)
+                    .HasMaxLength(50);
+                entity.Property(e => e.UsersLastname)
+                    .IsRequired()
+                    .HasColumnName("USERS_LASTNAME")
+                    .IsUnicode(false)
+                    .HasMaxLength(50);
+                entity.Property(e => e.UsersUsername)
+                    .HasColumnName("USERS_USERNAME")
+                    .IsRequired()
+                    .IsUnicode(false)
+                    .HasMaxLength(50);
+                entity.Property(e => e.UsersPhoneNumber)
+                    .HasColumnName("USERS_PHONE_NUMBER")
+                    .IsUnicode(false)
+                    .HasMaxLength(14);
+                entity.Property(e => e.UsersEmail)
+                    .HasColumnName("USERS_EMAIL")
+                    .IsUnicode(false)
+                    .HasMaxLength(64);
+                entity.Property(e => e.UsersPassword)
+                    .IsRequired()
+                    .HasColumnName("USERS_PASSWORD")
+                    .IsUnicode(false)
+                    .HasMaxLength(64);
+                entity.Property(e => e.UsersGender)
+                    .HasColumnName("USERS_GENDER")
+                    .IsUnicode(false)
+                    .HasMaxLength(9);
+                entity.Property(e => e.UsersPicture)
+                    .HasColumnName("USERS_PICTURE")
+                    .IsUnicode(false)
+                    .HasMaxLength(100);
+                entity.Property(e => e.UsersBornDate)
+                    .HasColumnName("USERS_BORN_DATE")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.UsersCreatedAt)
+                    .HasColumnName("USERS_CREATED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.UsersCreatedByUsersId)
+                    .HasColumnName("USERS_CREATED_BY_USERS_ID")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UsersCreatedbyUsersName)
+                    .HasColumnName("USERS_CREATED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UsersUpdatedAt)
+                    .HasColumnName("USERS_UPDATED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.UsersUpdatedByUsersId)
+                    .HasColumnName("USERS_UPDATED_BY_USERS_ID")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UsersUpdatedByUsersName)
+                    .HasColumnName("USERS_UPDATED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UsersDeletedAt)
+                    .HasColumnName("USERS_DELETED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.UsersDeletedByUsersId)
+                    .HasColumnName("USERS_DELETED_BY_USERS_ID")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UsersDeletedByUsersName)
+                    .HasColumnName("USERS_DELETED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UsersIsBanned)
+                    .HasColumnName("USERS_IS_BANNED")
+                    .HasColumnType("bit");
+                entity.HasOne(d => d.UserPoints)
+                    .WithOne(p => p.Users)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
+                entity.HasMany(d => d.UserRewards)
+                    .WithOne(p => p.Users)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
+            });
         }
     }
 }
