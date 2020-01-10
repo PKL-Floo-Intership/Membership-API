@@ -204,6 +204,57 @@ namespace membership_api.Models
                     .HasColumnName("REWARDS_IS_ACTIVE")
                     .HasColumnType("bit");
             });
+
+            modelBuilder.Entity<UserPoints> (entity => {
+                entity.ToTable("USER_POINTS");
+
+                entity.Property(e => e.UserPointsId)
+                    .IsRequired()
+                    .HasColumnName("USER_POINTS_ID")
+                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.UsersId)
+                    .IsRequired()
+                    .HasColumnName("USERS_ID");
+                entity.Property(e => e.UserPointsCredit)
+                    .HasColumnName("USER_POINTS_CREDIT");
+                entity.Property(e => e.UserPointsDebet)
+                    .HasColumnName("USER_POINTS_DEBET");
+                entity.Property(e => e.UserPointsBalance)
+                    .HasColumnName("USER_POINTS_BALANCE");
+                entity.Property(e => e.UserPointsCreatedAt)
+                    .HasColumnName("USER_POINTS_CREATED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.UserPointsCreatedByUsersId)
+                    .HasColumnName("USER_POINTS_CREATED_BY_USERS_ID")
+                    .IsUnicode(false)
+                    .HasMaxLength(50);
+                entity.Property(e => e.UserPointsCreatedByUsersName)
+                    .HasColumnName("USER_POINTS_CREATED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UserPointsUpdatedAt)
+                    .HasColumnName("USER_POINTS_UPDATED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.UserPointsUpdatedByUsersId)
+                    .HasColumnName("USER_POINTS_UPDATED_BY_USERS_ID")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UserPointsUpdatedByUsersName)
+                    .HasColumnName("USER_POINTS_UPDATED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UserPointsDeletedAt)
+                    .HasColumnName("USER_POINTS_DELETED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.UserPointsDeletedByUsersId)
+                    .HasColumnName("USER_POINTS_DELETED_BY_USERS_ID")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UserPointsDeletedByUsersName)
+                    .HasColumnName("USER_POINTS_DELETED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
         }
     }
 }
