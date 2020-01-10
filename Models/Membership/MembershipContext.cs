@@ -143,6 +143,9 @@ namespace membership_api.Models
                     .HasMaxLength(50)
                     .HasColumnName("PROMOTIONS_DELETED_BY_USERS_NAME")
                     .IsUnicode(false);
+                entity.Property(e => e.PromotionsIsActive)
+                    .HasColumnName("PROMOTIONS_IS_ACTIVE")
+                    .HasColumnType("bit");
             });
         }
     }
