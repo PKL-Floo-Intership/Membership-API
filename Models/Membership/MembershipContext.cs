@@ -203,6 +203,9 @@ namespace membership_api.Models
                 entity.Property(e => e.RewardsIsActive)
                     .HasColumnName("REWARDS_IS_ACTIVE")
                     .HasColumnType("bit");
+                entity.HasMany(d => d.UserRewards)
+                    .WithOne(p => p.Rewards)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             modelBuilder.Entity<UserPoints> (entity => {
@@ -421,6 +424,12 @@ namespace membership_api.Models
                     .WithOne(p => p.Users)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
+            modelBuilder.Entity<Articles>().HasQueryFilter(p => p.ArticlesDeletedAt == null);
+            modelBuilder.Entity<Promotions>().HasQueryFilter(p => p.PromotionsDeletedAt == null);
+            modelBuilder.Entity<Rewards>().HasQueryFilter(p => p.RewardsDeletedAt == null);
+            modelBuilder.Entity<UserPoints>().HasQueryFilter(p => p.UserPointsDeletedAt == null);
+            modelBuilder.Entity<UserRewards>().HasQueryFilter(p => p.UserRewardsDeletedAt == null);
+            modelBuilder.Entity<Users>().HasQueryFilter(p => p.UsersDeletedAt == null);
         }
     }
 }
