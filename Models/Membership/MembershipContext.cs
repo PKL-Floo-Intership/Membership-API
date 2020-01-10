@@ -255,6 +255,54 @@ namespace membership_api.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
             });
+
+            modelBuilder.Entity<UserRewards>(entity => {
+                entity.ToTable("USER_REWARDS");
+
+                entity.Property(e => e.UserRewardsId)
+                    .IsRequired()
+                    .HasColumnName("USER_REWARDS_ID")
+                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.UsersId)
+                    .IsRequired()
+                    .HasColumnName("USERS_ID");
+                entity.Property(e => e.RewardsId)
+                    .IsRequired()
+                    .HasColumnName("REWARDS_ID");
+                entity.Property(e => e.UserRewardsCreatedAt)
+                    .HasColumnName("USER_REWARDS_CREATED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.UserRewardsCreatedByUsersId)
+                    .HasColumnName("USER_REWARDS_CREATED_BY_USERS_ID")
+                    .IsUnicode(false)
+                    .HasMaxLength(50);
+                entity.Property(e => e.UserRewardsCreatedByUsersName)
+                    .HasColumnName("USER_REWARDS_CREATED_BY_USERS_NAME")
+                    .IsUnicode(false)
+                    .HasMaxLength(50);
+                entity.Property(e => e.UserRewardsUpdatedAt)
+                    .HasColumnName("USER_REWARDS_UPDATED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.UserRewardsUpdatedByUsersId)
+                    .HasColumnName("USER_REWARDS_UPDATED_BY_USERS_ID")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UserRewardsUpdatedByUsersName)
+                    .HasColumnName("USER_REWARDS_UPDATED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UserRewardsDeletedAt)
+                    .HasColumnName("USER_REWARDS_DELETED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.UserRewardsDeletedByUsersId)
+                    .HasColumnName("USER_REWARDS_DELETED_BY_USERS_ID")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.UserRewardsDeletedByUsersName)
+                    .HasColumnName("USER_REWARDS_DELETED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
         }
     }
 }
