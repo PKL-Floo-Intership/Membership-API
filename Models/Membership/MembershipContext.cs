@@ -84,6 +84,66 @@ namespace membership_api.Models
                     .IsUnicode(false)
                     .HasMaxLength(50);
             });
+
+            modelBuilder.Entity<Promotions>(entity => 
+            {
+                entity.ToTable("PROMOTIONS");
+
+                entity.Property(e => e.PromotionsId)
+                    .IsRequired()
+                    .HasColumnName("PROMOTIONS_ID")
+                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.PromotionsTitle)
+                    .IsRequired()
+                    .HasColumnName("PROMOTIONS_TITLE")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+                entity.Property(e => e.PromotionsDescription)
+                    .IsRequired()
+                    .HasColumnName("PROMOTIONS_DESCRIPTION")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+                entity.Property(e => e.PromotionsIcon)
+                    .HasColumnName("PROMOTIONS_ICON")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+                entity.Property(e => e.PromotionsExpiredAt)
+                    .HasColumnName("PROMOTIONS_EXPIRED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.PromotionsCreatedAt)
+                    .HasColumnName("PROMOTIONS_CRETED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.PromotionsCreatedByUsersId)
+                    .HasColumnName("PROMOTIONS_CREATED_BY_USERS_ID")
+                    .IsUnicode(false)
+                    .HasMaxLength(50);
+                entity.Property(e => e.PromotionsCreatedByUsersName)
+                    .HasColumnName("PROMOTIONS_CREATED_BY_USERS_NAME")
+                    .IsUnicode(false)
+                    .HasMaxLength(50);
+                entity.Property(e => e.PromotionsUpdatedAt)
+                    .HasColumnName("PROMOTIONS_UPDATED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.PromotionsUpdatedByUsersId)
+                    .HasColumnName("PROMOTIONS_UPDATED_BY_USERS_ID")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.PromotionsUpdatedByUsersName)
+                    .HasColumnName("PROMOTIONS_UPDATED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.PromotionsDeletedAt)
+                    .HasColumnName("PROMOTIONS_DELETED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.PromotionsDeletedByUsersId)
+                    .HasColumnName("PROMOTIONS_DELETED_BY_USERS_ID")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.PromotionsDeletedByUsersName)
+                    .HasMaxLength(50)
+                    .HasColumnName("PROMOTIONS_DELETED_BY_USERS_NAME")
+                    .IsUnicode(false);
+            });
         }
     }
 }
