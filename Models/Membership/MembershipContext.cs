@@ -254,6 +254,9 @@ namespace membership_api.Models
                     .HasColumnName("USER_POINTS_DELETED_BY_USERS_NAME")
                     .HasMaxLength(50)
                     .IsUnicode(false);
+                entity.HasOne(d => d.Users)
+                    .WithOne(p => p.UserPoints)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             modelBuilder.Entity<UserRewards>(entity => {
