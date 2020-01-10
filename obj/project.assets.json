@@ -5031,7 +5031,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Microsoft.EntityFrameworkCore.SqlServer",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.0",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.9.10",
       "Newtonsoft.Json >= 12.0.3"
     ]
@@ -5075,7 +5075,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "(, )"
+            "version": "[3.1.0, )"
           },
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",
