@@ -302,6 +302,12 @@ namespace membership_api.Models
                     .HasColumnName("USER_REWARDS_DELETED_BY_USERS_NAME")
                     .HasMaxLength(50)
                     .IsUnicode(false);
+                entity.HasOne(d => d.Rewards)
+                    .WithMany(p => p.UserRewards)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
+                entity.HasOne(d => d.Users)
+                    .WithMany(p => p.UserRewards)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             modelBuilder.Entity<Users>(entity => {
