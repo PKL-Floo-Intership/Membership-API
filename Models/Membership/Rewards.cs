@@ -22,7 +22,7 @@ namespace membership_api.Models
         public DateTime? RewardsDeletedAt { get; set; }
         public String RewardsDeletedByUsersId { get; set; }
         public String RewardsDeletedByUsersName { get; set; }
-        public Boolean RewardsIsActive { get; set; }
+        public bool RewardsIsActive { get; set; }
 
         public virtual ICollection<UserRewards> UserRewards { get; set; }
     }

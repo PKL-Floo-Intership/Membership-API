@@ -19,7 +19,7 @@ namespace membership_api.Models
         public int UsersCardNumber { get; set; }
         public String UsersCardBarcode { get; set; }
         public DateTime UsersCardExpiredAt { get; set; }
-        public Boolean UsersCardIsExpired { get; set; }
+        public bool UsersCardIsExpired { get; set; }
         public String UsersIdentityNumber { get; set; }
         public String UsersFirstname { get; set; }
         public String UsersLastname { get; set; }
@@ -44,7 +44,7 @@ namespace membership_api.Models
         public DateTime? UsersDeletedAt { get; set; }
         public String UsersDeletedByUsersId { get; set; }
         public String UsersDeletedByUsersName { get; set; }
-        public Boolean UsersIsBanned { get; set; }
+        public bool UsersIsBanned { get; set; }
 
         public virtual UserPoints UserPoints { get; set; }
         public virtual ICollection<UserRewards> UserRewards { get; set; }

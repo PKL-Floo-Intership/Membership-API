@@ -18,7 +18,7 @@ namespace membership_api.Models
         public DateTime? PromotionsDeletedAt { get; set; }
         public String PromotionsDeletedByUsersId { get; set; }
         public String PromotionsDeletedByUsersName { get; set; }
-        public Boolean PromotionsIsActive { get; set; }
+        public bool PromotionsIsActive { get; set; }
         
     }
 }
