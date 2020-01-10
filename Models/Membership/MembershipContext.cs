@@ -147,6 +147,63 @@ namespace membership_api.Models
                     .HasColumnName("PROMOTIONS_IS_ACTIVE")
                     .HasColumnType("bit");
             });
+
+            modelBuilder.Entity<Rewards>(entity => {
+                entity.ToTable("REWARDS");
+
+                entity.Property(e => e.RewardsId)
+                    .IsRequired()
+                    .HasColumnName("REWARDS_ID")
+                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.RewardsName)
+                    .IsRequired()
+                    .HasColumnName("REWARDS_NAME")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+                entity.Property(e => e.RewardsDescription)
+                    .HasColumnName("REWARDS_DESCRIPTION")
+                    .HasColumnType("text");
+                entity.Property(e => e.RewardsIcon)
+                    .HasColumnName("REWARDS_ICON")
+                    .IsUnicode(false)
+                    .HasMaxLength(100);
+                entity.Property(e => e.RewardsCreatedAt)
+                    .HasColumnName("REWARDS_CREATED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.RewardsCreatedByUsersId)
+                    .HasColumnName("REWARDS_CREATED_BY_USERS_ID")
+                    .IsUnicode(false)
+                    .HasMaxLength(50);
+                entity.Property(e => e.RewardsCreatedByUsersName)
+                    .HasColumnName("REWARDS_CREATED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.RewardsUpdatedAt)
+                    .HasColumnName("REWARDS_UPDATED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.RewardsUpdatedByUsersId)
+                    .HasColumnName("REWARDS_UPDATED_BY_USERS_ID")
+                    .IsUnicode(false)
+                    .HasMaxLength(50);
+                entity.Property(e => e.RewardsUpdatedByUsersName)
+                    .HasColumnName("REWARDS_UPDATED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.RewardsDeletedAt)
+                    .HasColumnName("REWARDS_DELETED_AT")
+                    .HasColumnType("datetime");
+                entity.Property(e => e.RewardsDeletedByUsersId)
+                    .HasColumnName("REWARDS_DELETED_BY_USERS_ID")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.RewardsDeletedByUsersName)
+                    .HasColumnName("REWARDS_DELETED_BY_USERS_NAME")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entity.Property(e => e.RewardsIsActive)
+                    .HasColumnName("REWARDS_IS_ACTIVE")
+                    .HasColumnType("bit");
+            });
         }
     }
 }
